@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DataStorage</string>
+    <string name="action_settings">Settings</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Correo</string>
+    <string name="contra">Contrasena</string>
+    <string name="edad">Edad</string>
+    <string name="guardar">Acceder</string>
+    <string name="registro">Registro</string>
+    <string name="nombre_Prof">Nombre: %1$s</string>
+    <string name="correo_Prof">E-Mail: %1$s</string>
+    <string name="contra_Prof">Contraseña: %1$s</string>
+    <string name="edad_Prof">Edad: %1$d</string>
+    <string name="registrar">Registrar</string>
+    <string name="volver">Volver</string>
+    <string name="redirect_User">Lista Usuarios</string>
+    <string name="redirect_Movies">Lista Peliculas</string>
+    <string name="get">GET</string>
+    <string name="post">post</string>
+    <string name="description_Movie">Descripcion</string>
+</resources>
