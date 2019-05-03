@@ -9,8 +9,8 @@
         android:background="@color/colorBackGround">
 
     <ListView
-            android:layout_width="440dp"
-            android:layout_height="544dp"
+            android:layout_width="fill_parent"
+            android:layout_height="600dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -18,7 +18,7 @@
             android:clickable="true" android:scrollbars="vertical"/>
 
     <Button
-            android:text="@string/get"
+            android:text="@string/add_movies"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -29,10 +29,10 @@
             android:textColorHint="@color/colorPrimary"
             android:background="@drawable/rounder_corner_button"
             android:ems="10"
-            android:onClick="getMethod"/>
+            android:onClick="newMovie" android:layout_marginTop="12dp"/>
 
     <Button
-            android:text="@string/post"
+            android:text="@string/my_movies"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -44,6 +44,6 @@
             android:textColorHint="@color/colorPrimary"
             android:background="@drawable/rounder_corner_button"
             android:ems="10"
-            android:onClick="postMethod"/>
+            android:onClick="myMovies"/>
 
 </android.support.constraint.ConstraintLayout>

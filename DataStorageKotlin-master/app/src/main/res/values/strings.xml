@@ -14,8 +14,9 @@
     <string name="registrar">Registrar</string>
     <string name="volver">Volver</string>
     <string name="redirect_User">Lista Usuarios</string>
-    <string name="redirect_Movies">Lista Peliculas</string>
-    <string name="get">GET</string>
-    <string name="post">post</string>
+    <string name="redirect_Movies">Lista Peliculas TOP</string>
+    <string name="add_movies">Buscar Pelicula</string>
+    <string name="my_movies">Mis Peliculas</string>
     <string name="description_Movie">Descripcion</string>
+    <string name="search">Buscar</string>
 </resources>

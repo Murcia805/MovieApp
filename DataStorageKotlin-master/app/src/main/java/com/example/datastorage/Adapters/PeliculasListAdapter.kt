@@ -58,7 +58,7 @@ class PeliculasListAdapter(private val activity: Activity, list: List<Pelicula>?
         override fun onPostExecute(result: Bitmap?) {
             if(result!=null){
                 // Display the downloaded image into image view
-                Toast.makeText(imageView.context,"download success",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(imageView.context,"download success",Toast.LENGTH_SHORT).show()
                 imageView.setImageBitmap(result)
             }else{
                 Toast.makeText(imageView.context,"Error downloading",Toast.LENGTH_SHORT).show()

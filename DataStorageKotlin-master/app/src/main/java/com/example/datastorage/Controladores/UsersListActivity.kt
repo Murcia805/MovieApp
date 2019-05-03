@@ -29,11 +29,7 @@ class UsersListActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_users_list)
 
-        val url = "https://api.themoviedb.org/3/movie/76341?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb"
-
-        AsyncTaskHandleJson().execute(url)
-
-        /*var listImg: MutableList<Int> = mutableListOf<Int>(R.drawable.user, R.drawable.user1, R.drawable.user2, R.drawable.usern)
+        var listImg: MutableList<Int> = mutableListOf<Int>(R.drawable.user, R.drawable.user1, R.drawable.user2, R.drawable.usern)
         val listPosts: List<User>? = UserDBServices(this).consultUsers()
 
 
@@ -54,10 +50,17 @@ class UsersListActivity : AppCompatActivity()
             intent.putExtra(ProfileActivity.PASSW_PROFILE, adapter.getPassword(i))
 
             startActivity(intent)
-        }*/
+        }
     }
 
-    inner class AsyncTaskHandleJson : AsyncTask<String, String, String>(){
+    fun goMainActivity(view: View)
+    {
+        val intent = Intent(this, RedirectActivity::class.java)
+        startActivity(intent)
+    }
+}
+
+/*inner class AsyncTaskHandleJson : AsyncTask<String, String, String>(){
 
         override fun doInBackground(vararg url: String?): String {
             var text : String
@@ -101,11 +104,4 @@ class UsersListActivity : AppCompatActivity()
         list.add(movie)
         val adapater = PeliculasListAdapter(this,list)
         listUsers.adapter = adapater
-    }
-
-    fun goMainActivity(view: View)
-    {
-        val intent = Intent(this, RedirectActivity::class.java)
-        startActivity(intent)
-    }
-}
+    }*/

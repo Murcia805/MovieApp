@@ -7,7 +7,6 @@ class MovieDataResponse(
     val adult: String?,
     //val collection: List<CollectionChildrenResponse>,
     //val genres: List<GenresChildrenResponse>,
-    val imdb_id: String?,
     val overview: String?,
     val popularity: Int?,
     val poster_path: String?,

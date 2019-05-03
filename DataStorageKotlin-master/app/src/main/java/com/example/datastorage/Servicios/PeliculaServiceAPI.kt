@@ -103,6 +103,10 @@ class PeliculaServiceAPI {
         addToRequestQueue(deleteRequest)
     }
 
+    fun destroy() {
+        mInstance = null
+    }
+
     companion object {
         private var mInstance : PeliculaServiceAPI?=null
         @Synchronized

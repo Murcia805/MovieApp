@@ -23,7 +23,6 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
 
         val sql2 : String = "CREATE TABLE peliculas(idMovie int primarykey," +
                             "adult text," +
-                            "imdb_id text," +
                             "overview text," +
                             "popularity integer," +
                             "poster_path text," +
@@ -69,7 +68,6 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
         var localPelicula = ContentValues()
         localPelicula.put("idMovie",movie.data.id)
         localPelicula.put("adult",movie.data.adult)
-        localPelicula.put("imdb_id",movie.data.imdb_id)
         localPelicula.put("overview",movie.data.overview)
         localPelicula.put("popularity",movie.data.popularity)
         localPelicula.put("poster_path",movie.data.poster_path)
@@ -115,13 +113,12 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
                     result.getInt(0),
                     result.getString(1),
                     result.getString(2),
-                    result.getString(3),
-                    result.getInt(4),
+                    result.getInt(3),
+                    result.getString(4),
                     result.getString(5),
                     result.getString(6),
-                    result.getString(7),
-                    result.getInt(8),
-                    result.getInt(9)
+                    result.getInt(7),
+                    result.getInt(8)
                 )
             )
 
