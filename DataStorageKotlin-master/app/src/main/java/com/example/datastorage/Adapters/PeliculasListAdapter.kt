@@ -84,4 +84,40 @@ class PeliculasListAdapter(private val activity: Activity, list: List<Pelicula>?
         return movieList.size
     }
 
+    fun getName(i: Int): String? {
+        return movieList[i].data.title
+    }
+
+    fun getOverview(i: Int): String? {
+        return movieList[i].data.overview
+    }
+
+    fun getAdult(i: Int): String? {
+        return movieList[i].data.adult
+    }
+
+    fun getPopularity(i: Int): Int? {
+        return movieList[i].data.popularity
+    }
+
+    fun getPosterpath(i: Int): String? {
+        return movieList[i].data.poster_path
+    }
+
+    fun getReleasedate(i: Int): String? {
+        return movieList[i].data.release_date
+    }
+
+    fun getVoteaverage(i: Int): Int? {
+        return movieList[i].data.vote_average
+    }
+
+    fun getVotecount(i: Int): Int? {
+        return movieList[i].data.vote_count
+    }
+
+    fun getID(i: Int): Int? {
+        return movieList[i].data.id
+    }
+
 }

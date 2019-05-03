@@ -11,6 +11,15 @@
     <string name="correo_Prof">E-Mail: %1$s</string>
     <string name="contra_Prof">Contraseña: %1$s</string>
     <string name="edad_Prof">Edad: %1$d</string>
+
+    <string name="nombre_Movie">%1$s</string>
+    <string name="descripcion_Movie">%1$s</string>
+    <string name="date_Movie">Fecha Lanzamiento: %1$s</string>
+    <string name="popularity_Movie">Popularidad: %1$d</string>
+    <string name="vote_Movie">Votacion: %1$d</string>
+    <string name="add_movie">Añadir Pelicula</string>
+
+
     <string name="registrar">Registrar</string>
     <string name="volver">Volver</string>
     <string name="redirect_User">Lista Usuarios</string>

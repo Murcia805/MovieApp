@@ -13,6 +13,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:hardwareAccelerated="false">
+        <activity android:name=".Controladores.MovieNewActivity">
+        </activity>
         <activity android:name=".Controladores.AddMovieActivity">
         </activity>
         <activity android:name=".Controladores.MovieActivity">

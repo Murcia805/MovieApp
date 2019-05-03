@@ -1,5 +1,6 @@
 package com.example.datastorage.Controladores
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -20,7 +21,30 @@ class AddMovieActivity : AppCompatActivity(),IPeliculaApi {
     private var instancePeliculaApi :PeliculaServiceAPI? = null
 
     override fun onResponse(response: String) {
-        handleJson(response)
+        val lista = handleJson(response)
+        val adapter = PeliculasListAdapter(this,lista)
+        listMoviesSearch.adapter = adapter
+
+        val intent = Intent(this, MovieNewActivity::class.java)
+
+        listMoviesSearch.setClickable(true)
+        listMoviesSearch.setOnItemClickListener { adapterView, view, i, l ->
+
+            Toast.makeText(this, "Item Clicked " + adapter.getName(i),Toast.LENGTH_SHORT).show()
+
+            intent.putExtra(MovieNewActivity.ID_MOVIE, adapter.getID(i))
+            intent.putExtra(MovieNewActivity.ADULT_MOVIE, adapter.getAdult(i))
+            intent.putExtra(MovieNewActivity.IMAGE_MOVIE, adapter.getPosterpath(i))
+            intent.putExtra(MovieNewActivity.NAME_MOVIE, adapter.getName(i))
+            intent.putExtra(MovieNewActivity.DESCRIPTION_MOVIE, adapter.getOverview(i))
+            intent.putExtra(MovieNewActivity.DATE_MOVIE, adapter.getReleasedate(i))
+            intent.putExtra(MovieNewActivity.POPULAR_MOVIE, adapter.getPopularity(i)!!.toInt())
+            intent.putExtra(MovieNewActivity.VOTES_AVERAGE_MOVIE, adapter.getVoteaverage(i)!!.toInt())
+            intent.putExtra(MovieNewActivity.VOTES_COUNT_MOVIE, adapter.getVotecount(i)!!.toInt())
+
+            startActivity(intent)
+        }
+
     }
 
     override fun savePelicula(movie: Pelicula) {
@@ -35,6 +59,10 @@ class AddMovieActivity : AppCompatActivity(),IPeliculaApi {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_movie)
+
+
+
+
     }
 
     override fun onDestroy() {
@@ -58,7 +86,7 @@ class AddMovieActivity : AppCompatActivity(),IPeliculaApi {
         instancePeliculaApi!!.destroy()
     }
 
-    private fun handleJson(jsonString: String?){
+    private fun handleJson(jsonString: String?): ArrayList<Pelicula>{
         val jsonObject = JSONObject(jsonString).getString("results")
         val list = ArrayList<Pelicula>()
         val jsonArray = JSONArray(jsonObject)
@@ -82,7 +110,6 @@ class AddMovieActivity : AppCompatActivity(),IPeliculaApi {
             i = i + 1
 
         }
-        val adapater = PeliculasListAdapter(this,list)
-        listMoviesSearch.adapter = adapater
+        return list
     }
 }
